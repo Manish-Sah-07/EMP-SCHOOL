@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>EMP School - Admission</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<header>
+
+    <div class="logo">EMP SCHOOL</div>
+
+    <div id="clock"></div>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="syllabus.html">Syllabus</a>
+    <a href="fees.html">Fees</a>
+    <a href="events.html">Events</a>
+    <a href="admission.html">Admission</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+
+</nav>
+
+
+<div class="page-header">
+
+    <h1>Admission</h1>
+
+    <p>
+        Join ENLIGHTENMENT SCHOOL KHIRHAR
+    </p>
+
+</div>
+
+
+<div class="content">
+
+    <h2>Admission Application Form</h2>
+
+
+    <form onsubmit="submitForm(event)">
+
+        <input
+            type="text"
+            placeholder="Student Name"
+            required
+        >
+
+
+        <input
+            type="text"
+            placeholder="Parent / Guardian Name"
+            required
+        >
+
+
+        <input
+            type="email"
+            placeholder="Email Address"
+            required
+        >
+
+
+        <input
+            type="tel"
+            placeholder="Mobile Number"
+            required
+        >
+
+
+        <select required>
+
+            <option value="">
+                Select Class
+            </option>
+
+            <option>Class 1</option>
+            <option>Class 2</option>
+            <option>Class 3</option>
+            <option>Class 4</option>
+            <option>Class 5</option>
+            <option>Class 6</option>
+            <option>Class 7</option>
+            <option>Class 8</option>
+            <option>Class 9</option>
+            <option>Class 10</option>
+            <option>Class 11</option>
+            <option>Class 12</option>
+
+        </select>
+
+
+        <textarea
+            placeholder="Address"
+            required>
+        </textarea>
+
+
+        <button type="submit">
+
+            Submit Application
+
+        </button>
+
+    </form>
+
+</div>
+
+
+<footer>
+
+    <p>© 2026 EMP School</p>
+
+    <p>ENLIGHTENMENT SCHOOL KHIRHAR</p>
+
+</footer>
+
+
+<script>
+
+function submitForm(event) {
+
+    event.preventDefault();
+
+    alert(
+        "Thank you! Your admission application has been submitted."
+    );
+
+}
+
+
+function updateClock() {
+
+    document.getElementById("clock").innerHTML =
+        new Date().toLocaleTimeString();
+
+}
+
+setInterval(updateClock, 1000);
+
+updateClock();
+
+</script>
+
+
+</body>
+
+</html>

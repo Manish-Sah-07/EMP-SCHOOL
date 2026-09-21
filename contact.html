@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>EMP School - Contact</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<header>
+
+    <div class="logo">EMP SCHOOL</div>
+
+    <div id="clock"></div>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="syllabus.html">Syllabus</a>
+    <a href="fees.html">Fees</a>
+    <a href="events.html">Events</a>
+    <a href="admission.html">Admission</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+
+</nav>
+
+
+<div class="page-header">
+
+    <h1>Contact Us</h1>
+
+    <p>
+        Get in touch with ENLIGHTENMENT SCHOOL KHIRHAR
+    </p>
+
+</div>
+
+
+<div class="content">
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>📍 Address</h3>
+
+            <p>
+                Khirhar Village,<br>
+                Madhubani,<br>
+                Bihar, India
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>📞 Phone</h3>
+
+            <p>
+                +91 XXXXXXXXXX
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>📧 Email</h3>
+
+            <p>
+                empschool@example.com
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <h2 style="margin-top:50px;">
+        Send Us a Message
+    </h2>
+
+
+    <form onsubmit="sendMessage(event)">
+
+
+        <input
+            type="text"
+            placeholder="Your Name"
+            required
+        >
+
+
+        <input
+            type="email"
+            placeholder="Your Email"
+            required
+        >
+
+
+        <textarea
+            placeholder="Your Message"
+            required>
+        </textarea>
+
+
+        <button type="submit">
+
+            Send Message
+
+        </button>
+
+
+    </form>
+
+</div>
+
+
+<footer>
+
+    <p>© 2026 EMP School</p>
+
+    <p>ENLIGHTENMENT SCHOOL KHIRHAR</p>
+
+</footer>
+
+
+<script>
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    alert(
+        "Thank you! Your message has been sent."
+    );
+
+}
+
+
+function updateClock() {
+
+    document.getElementById("clock").innerHTML =
+        new Date().toLocaleTimeString();
+
+}
+
+setInterval(updateClock, 1000);
+
+updateClock();
+
+</script>
+
+
+</body>
+
+</html>
