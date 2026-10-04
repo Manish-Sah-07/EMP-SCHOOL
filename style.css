@@ -1,3 +1,7 @@
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +23,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
 }
 
 .logo {
@@ -27,11 +33,30 @@ header {
     gap: 12px;
     font-size: 28px;
     font-weight: bold;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.logo-main {
+    font-size: clamp(16px, 2.2vw, 28px);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo-sub {
+    font-size: clamp(10px, 1.1vw, 14px);
+    font-weight: normal;
+    white-space: nowrap;
 }
 
 .logo img {
-    width: 65px;
-    height: 65px;
+    width: clamp(45px, 6vw, 65px);
+    height: clamp(45px, 6vw, 65px);
     border-radius: 50%;
     object-fit: cover;
 }
@@ -41,16 +66,32 @@ header {
 }
 
 
-@keyframes announcement {
+/* ANNOUNCEMENT BAR */
 
+.announcement-bar {
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.announcement-text {
+    display: inline-block;
+    padding-left: 100%;
+    font-size: clamp(13px, 1.4vw, 16px);
+    font-weight: bold;
+    animation: announcement 15s linear infinite;
+}
+
+@keyframes announcement {
     0% {
         transform: translateX(0);
     }
-
     100% {
         transform: translateX(-100%);
     }
-
 }
 
 
@@ -58,21 +99,63 @@ header {
 
 nav {
     background-color: #172554;
-    padding: 15px;
-    text-align: center;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
 }
 
-nav a {
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #172554;
+    width: 220px;
+    padding: 10px;
+    gap: 8px;
+    z-index: 10;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links a {
+    background-color: #1e3a8a;
     color: white;
     text-decoration: none;
-    margin: 0 12px;
-    font-size: 16px;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-nav a:hover {
-    color: #facc15;
+.nav-links a:hover {
+    background-color: #facc15;
+    color: #172554;
+}
+.youtube-link {
+    background-color: #ff0000 !important;
 }
 
+/* .youtube-link:hover {
+    background-color: #cc0000 !important;
+} */
 
 /* HOME BANNER */
 
@@ -174,6 +257,13 @@ nav a:hover {
 
 
 /* TABLE */
+.content {
+    overflow-x: auto;
+}
+
+table {
+    min-width: 500px;
+}
 
 table {
     width: 90%;
@@ -348,22 +438,102 @@ footer {
 footer p {
     margin: 5px;
 }
+/* DIRECTOR */
+
+.director-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.director-card {
+    background-color: white;
+    max-width: 320px;
+    margin: 20px auto 0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.director-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.director-card h3 {
+    color: #1e3a8a;
+    font-size: 22px;
+    margin-bottom:6px;
+}
+
+.director-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+/* FACULTY */
+
+.faculty-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.faculty-card {
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.faculty-card:hover {
+    transform: translateY(-5px);
+}
+
+.faculty-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.faculty-card h3 {
+    color: #1e3a8a;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.faculty-subject {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.faculty-contact {
+    font-size: 14px;
+    color: #777;
+}
 
 
 /* MOBILE */
 
 @media (max-width: 768px) {
 
-    header {
+    /* header {
         flex-direction: column;
         gap: 10px;
-    }
-
-    nav a {
-        display: block;
-        margin: 10px;
-    }
-
+    } */
     .banner h1 {
         font-size: 32px;
     }
@@ -381,4 +551,5 @@ footer p {
         margin-right: 0;
         margin-bottom: 15px;
     }
+    
 }
